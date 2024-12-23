@@ -1,3 +1,6 @@
+import sys
+input = sys.stdin.buffer.readline
+
 def solve(n, k):
     if n % 2 == 1:
         if n == 1 and k == 1: 
@@ -15,10 +18,9 @@ def solve(n, k):
             return 2*solve(n//2, k - n//2) - 1 
 
 def main():
-    q = int(input())
-    queries = [list(map(int, input().split())) for _ in range(q)]
-    for query in queries:
-        print(solve(query[0], query[1]))
+    for _ in range(int(input())):
+        n, k = map(int, input().split())
+        print(solve(n,k))
 
 if __name__ == '__main__':
     main()
