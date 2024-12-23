@@ -3,7 +3,7 @@ def solve(n, k):
         if n == 1 and k == 1: 
             return 1 
         elif 2*k <= n+1:
-            return 2*k 
+            return 2*k % n
         else:
             return 2*solve((n-1)//2, k - (n+1)//2) + 1
     else:
